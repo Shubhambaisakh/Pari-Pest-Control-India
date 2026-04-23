@@ -1,6 +1,7 @@
 import { teamMembers } from '@/lib/data';
 import Link from 'next/link';
 import Image from 'next/image';
+import Certifications from '@/components/home/Certifications';
 
 export const metadata = {
   title: 'About Us | Pari Pest Control India (PPCI)',
@@ -23,7 +24,7 @@ export default function AboutPage() {
         <p className="text-brand-900/70 text-sm mb-2">
           <Link href="/" className="hover:underline">Home</Link> / About Us
         </p>
-        <h1 className="text-4xl font-bold mb-4">About Pari Pest Control India</h1>
+        <h1 className="text-4xl font-bold mb-4">About Us</h1>
         <p className="text-brand-900/80 text-lg">PPCI Pvt. Ltd. — Best Pest Control in Bhopal</p>
       </section>
 
@@ -108,15 +109,14 @@ export default function AboutPage() {
 
       {/* Core Values */}
       <section className="bg-brand-500 text-brand-900 py-16 px-4 text-center">
-        <h2 className="text-3xl font-bold mb-4">Our Core Values</h2>
-          <div className="flex flex-wrap justify-center gap-6">
-            {VALUES.map((v) => (
-              <div key={v.label} className="bg-white rounded-xl px-8 py-5 flex flex-col items-center gap-2 shadow-md min-w-[120px]">
-                <span className="text-3xl">{v.icon}</span>
-                <span className="text-brand-700 font-bold text-sm">{v.label}</span>
-              </div>
-            ))}
-          </div>
+        <h2 className="text-3xl font-bold mb-8">Our Core Values</h2>
+        <div className="flex flex-wrap justify-center gap-6 max-w-3xl mx-auto">
+          {VALUES.map((v) => (
+            <div key={v.label} className="bg-white rounded-xl px-8 py-5 flex flex-col items-center gap-2 shadow-md min-w-[120px]">
+              <span className="text-3xl">{v.icon}</span>
+              <span className="text-brand-700 font-bold text-sm">{v.label}</span>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -168,6 +168,9 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      {/* Certifications */}
+      <Certifications />
 
       {/* CTA */}
       <section className="bg-brand-600 text-white py-16 px-4 text-center">

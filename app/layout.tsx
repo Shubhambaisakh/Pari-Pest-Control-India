@@ -1,23 +1,24 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
+import MobileBottomBar from '@/components/layout/MobileBottomBar';
+import CustomCursor from '@/components/layout/CustomCursor';
 import './globals.css';
 
-const inter = Inter({ subsets: ['latin'] });
-
 export const metadata: Metadata = {
-  title: 'Pari Pest Control India | PPCI — Best Pest Control in Bhopal',
+  title: 'Pari Pest Control India Private Limited | PPCI — Best Pest Control in Bhopal',
   description: "Pari Pest Control India Pvt. Ltd. — Best pest control in Bhopal. Eco-friendly solutions for homes and businesses. Call 1800-309-4947.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body style={{ fontFamily: "'Poppins', sans-serif" }}>
+        <CustomCursor />
         <Navbar />
-        <main>{children}</main>
+        <main className="pb-16 md:pb-0">{children}</main>
         <Footer />
+        <MobileBottomBar />
       </body>
     </html>
   );

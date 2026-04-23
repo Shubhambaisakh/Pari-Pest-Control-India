@@ -1,37 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
-  html {
-    scroll-behavior: smooth;
-  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Poppins', sans-serif; }
 }
 
-/* Infinite sliding carousel */
+/* ── Carousel ── */
 @keyframes slide {
   0%   { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
+.animate-slide { animation: slide 28s linear infinite; }
+.animate-slide:hover { animation-play-state: paused; }
 
-.animate-slide {
-  animation: slide 28s linear infinite;
-}
-
-.animate-slide:hover {
-  animation-play-state: paused;
-}
-
-/* Certificates sliding carousel */
 @keyframes slide-certs {
   0%   { transform: translateX(0); }
   100% { transform: translateX(-33.333%); }
 }
+.animate-slide-certs { animation: slide-certs 18s linear infinite; }
+.animate-slide-certs:hover { animation-play-state: paused; }
 
-.animate-slide-certs {
-  animation: slide-certs 18s linear infinite;
+/* ── Hero slider ── */
+.hero-slide { transition: opacity 0.7s ease, transform 0.7s ease; }
+
+/* ── Counter ── */
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.counter-animate { animation: countUp 0.5s ease forwards; }
+
+/* Pricing overlap hero */
+.pricing-overlap-wrapper {
+  margin-top: -80px;
+}
+@media (max-width: 767px) {
+  .pricing-overlap-wrapper {
+    margin-top: 0;
+  }
 }
 
-.animate-slide-certs:hover {
-  animation-play-state: paused;
+/* ── Mobile premium feel ── */
+@media (max-width: 767px) {
+  /* Smooth tap highlight */
+  * { -webkit-tap-highlight-color: rgba(198,231,0,0.2); }
+
+  /* Better touch targets */
+  button, a { min-height: 44px; }
+
+  /* Prevent text overflow */
+  h1, h2, h3 { word-break: break-word; }
+
+  /* Smooth scroll on iOS */
+  html { -webkit-overflow-scrolling: touch; }
+
+  /* Section padding tighter on mobile */
+  section { padding-left: 1rem !important; padding-right: 1rem !important; }
+}
+
+/* Pricing overlap — mobile no overlap */
+.pricing-overlap-wrapper { margin-top: -80px; }
+@media (max-width: 767px) {
+  .pricing-overlap-wrapper { margin-top: 0; }
 }

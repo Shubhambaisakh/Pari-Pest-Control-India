@@ -1,5 +1,4 @@
-import Link from 'next/link';
-import Hero from '@/components/home/Hero';
+import HeroSlider from '@/components/home/HeroSlider';
 import ServicesOverview from '@/components/home/ServicesOverview';
 import Features from '@/components/home/Features';
 import Testimonials from '@/components/home/Testimonials';
@@ -7,46 +6,59 @@ import Gallery from '@/components/home/Gallery';
 import Promise from '@/components/home/Promise';
 import ClientsCarousel from '@/components/home/ClientsCarousel';
 import HowItWorks from '@/components/home/HowItWorks';
-import Certifications from '@/components/home/Certifications';
+import StatsCounter from '@/components/home/StatsCounter';
+import Pricing from '@/components/home/Pricing';
+import Link from 'next/link';
 
 export default function HomePage() {
   return (
     <>
-      <Hero
-        headline="Pest Control Services Designed for Indian Households!"
-        subheadline="Professional, certified, and eco-friendly pest control. We eliminate ants, cockroaches, rodents, mosquitoes, and more — guaranteed."
-        ctaLabel="Book Now"
-        ctaHref="/contact"
-      />
+      <HeroSlider />
+
+      {/* Pricing overlaps hero — negative margin desktop, no overlap mobile */}
+      <div className="relative z-10 px-4 pricing-overlap-wrapper">
+        <div className="max-w-6xl mx-auto rounded-3xl shadow-2xl overflow-hidden bg-white">
+          <Pricing />
+        </div>
+      </div>
+
+      {/* Horizontal green counter bar removed */}
+
       <ServicesOverview />
       <Promise />
+      <HowItWorks />
       <Features />
       <Gallery />
-      <HowItWorks />
       <ClientsCarousel />
-      <Certifications />
       <Testimonials />
-      <section className="bg-brand-600 text-white py-16 px-4 text-center">
-        <h2 className="text-3xl font-bold mb-4">Ready to Live Pest-Free?</h2>
-        <p className="text-brand-100 mb-2">
-          Contact PPCI today for a free inspection and customised treatment plan.
+
+      {/* Final CTA */}
+      <section className="py-16 px-4 text-center" style={{ background: '#C6E700' }}>
+        <h2 className="text-3xl font-extrabold text-gray-900 mb-3">
+          Ready to Live Pest-Free?
+        </h2>
+        <p className="text-gray-700 mb-2 font-medium">
+          Contact Pari Pest Control India Private Limited today for a free inspection.
         </p>
-        <p className="text-2xl font-bold mb-8">
+        <p className="text-2xl font-extrabold text-gray-900 mb-8">
           <a href="tel:18003094947" className="hover:underline">1800-309-4947</a>
-          <span className="text-brand-200 text-sm ml-2">(Toll Free)</span>
+          <span className="text-sm font-normal text-gray-600 ml-2">(Toll Free)</span>
         </p>
         <div className="flex flex-wrap justify-center gap-4">
           <Link
             href="/contact"
-            className="bg-white text-brand-700 font-semibold px-8 py-3 rounded-full hover:bg-brand-50 transition-colors"
+            className="px-8 py-3 rounded-full font-bold text-white text-sm shadow-lg hover:opacity-90 transition-all duration-300 hover:scale-105"
+            style={{ background: '#1a2000' }}
           >
             Get a Free Quote
           </Link>
           <a
-            href="tel:18003094947"
-            className="border-2 border-white text-white font-semibold px-8 py-3 rounded-full hover:bg-brand-700 transition-colors"
+            href="https://wa.me/919644594899"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-8 py-3 rounded-full font-bold text-gray-900 text-sm border-2 border-gray-900 hover:bg-gray-900 hover:text-white transition-all duration-300"
           >
-            📞 Call Now
+            💬 WhatsApp Us
           </a>
         </div>
       </section>

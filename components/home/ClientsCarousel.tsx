@@ -17,21 +17,23 @@ export default function ClientsCarousel() {
   return (
     <section className="bg-white py-16 px-4 overflow-hidden">
       <div className="max-w-4xl mx-auto text-center mb-10">
-        {/* #startupindia */}
-        <div className="flex items-center justify-center mb-4">
-          <span className="text-3xl md:text-4xl font-black text-gray-900">#startup</span>
-          <span className="text-3xl md:text-4xl font-black" style={{ color: '#FF6B00' }}>in</span>
-          <span className="text-3xl md:text-4xl font-black text-gray-900">d</span>
-          <span className="text-3xl md:text-4xl font-black" style={{ color: '#138808' }}>ia</span>
-          <svg className="ml-2 w-9 h-9" viewBox="0 0 40 40" fill="none">
+        {/* Heading first */}
+        <h2 className="text-2xl md:text-3xl font-bold text-gray-800 tracking-wide mb-4">
+          Our Certificates And Partners
+        </h2>
+
+        {/* #startupindia below heading */}
+        <div className="flex items-center justify-center">
+          <span className="text-2xl md:text-3xl font-black text-gray-900">#startup</span>
+          <span className="text-2xl md:text-3xl font-black" style={{ color: '#FF6B00' }}>in</span>
+          <span className="text-2xl md:text-3xl font-black text-gray-900">d</span>
+          <span className="text-2xl md:text-3xl font-black" style={{ color: '#138808' }}>ia</span>
+          <svg className="ml-2 w-8 h-8" viewBox="0 0 40 40" fill="none">
             <rect x="0"  y="28" width="12" height="12" fill="#FF6B00" />
             <rect x="14" y="18" width="12" height="22" fill="#FF6B00" />
             <rect x="28" y="8"  width="12" height="32" fill="#138808" />
           </svg>
         </div>
-        <h2 className="text-2xl md:text-3xl font-light text-gray-800 tracking-wide">
-          Our Certificates And Partners
-        </h2>
       </div>
 
       {/* Sliding track */}

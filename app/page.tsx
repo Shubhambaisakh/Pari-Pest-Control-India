@@ -28,7 +28,6 @@ export default function HomePage() {
       <Promise />
       <HowItWorks />
       <Features />
-      <Gallery />
       <ClientsCarousel />
       <Testimonials />
 

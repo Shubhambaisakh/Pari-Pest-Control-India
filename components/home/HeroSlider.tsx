@@ -7,6 +7,7 @@ import Link from 'next/link';
 const SLIDES = [
   {
     bg: '/pest control1.webp',
+    photo: '/frontpage1.jpeg',
     badge: '🌿 Eco-Friendly Solutions',
     heading: 'Pest Control Services\nfor Indian Households!',
     sub: 'Professional, certified, eco-friendly pest control. We eliminate ants, cockroaches, rodents & more — guaranteed.',
@@ -15,6 +16,7 @@ const SLIDES = [
   },
   {
     bg: '/pest control2.webp',
+    photo: '/frontpage2.jpeg',
     badge: '🏆 10+ Years of Trust',
     heading: 'Complete Pest-Free\nEnvironment Guaranteed!',
     sub: 'From termites to bed bugs, our certified technicians handle every pest problem with family-safe treatments.',
@@ -23,6 +25,7 @@ const SLIDES = [
   },
   {
     bg: '/pest control 3.webp',
+    photo: '/frontpage3.jpg',
     badge: '⚡ Quick Response',
     heading: "Bhopal's Most Trusted\nPest Control Company!",
     sub: 'Serving Bhopal & Mandideep. ISO certified, MSME registered, IPCA member.',
@@ -69,7 +72,7 @@ export default function HeroSlider() {
             {slide.badge}
           </span>
 
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-4 text-gray-900 whitespace-pre-line">
+          <h1 data-cursor-zone="hero-heading" className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-4 text-gray-900 whitespace-pre-line">
             {slide.heading}
           </h1>
 
@@ -107,8 +110,14 @@ export default function HeroSlider() {
 
         {/* Right image — hidden on mobile to save space */}
         <div className="hidden md:block flex-1 relative w-full max-w-lg">
-          <div className="relative w-full rounded-3xl overflow-hidden shadow-2xl" style={{ aspectRatio: '4/3', border: '3px solid rgba(0,0,0,0.15)' }}>
-            <Image src={slide.bg} alt="PPCI work" fill className="object-cover" unoptimized />
+          <div
+            className="relative w-full rounded-3xl overflow-hidden shadow-2xl"
+            style={{
+              height: '380px',
+              border: '3px solid rgba(0,0,0,0.15)',
+            }}
+          >
+            <Image src={slide.photo} alt="PPCI work" fill className="object-cover object-center" unoptimized />
           </div>
           <div className="absolute -bottom-4 -left-4 bg-white rounded-2xl px-5 py-3 shadow-xl flex items-center gap-3" style={{ border: '2px solid #C6E700' }}>
             <span className="text-2xl">🏆</span>

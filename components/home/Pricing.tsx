@@ -71,8 +71,8 @@ function PricingCard({ plan, index, visible }: { plan: typeof PLANS[0]; index: n
       onMouseLeave={() => setHovered(false)}
       className="relative flex flex-col rounded-3xl border-2 overflow-hidden"
       style={{
-        background: plan.popular ? '#1a2000' : 'white',
-        borderColor: plan.popular ? '#C6E700' : hovered ? '#C6E700' : '#e5e7eb',
+        background: plan.popular ? '#1A6B35' : 'white',
+        borderColor: plan.popular ? '#84CC4A' : hovered ? '#84CC4A' : '#e5e7eb',
         boxShadow: hovered || plan.popular
           ? '0 24px 60px rgba(0,0,0,0.18)'
           : '0 4px 16px rgba(0,0,0,0.07)',
@@ -93,7 +93,7 @@ function PricingCard({ plan, index, visible }: { plan: typeof PLANS[0]; index: n
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
-            background: 'linear-gradient(105deg, transparent 40%, rgba(198,231,0,0.08) 50%, transparent 60%)',
+            background: 'linear-gradient(105deg, transparent 40%, rgba(132,204,74,0.08) 50%, transparent 60%)',
             backgroundSize: '200% 100%',
             animation: 'shimmer 3s linear infinite',
           }}
@@ -105,7 +105,7 @@ function PricingCard({ plan, index, visible }: { plan: typeof PLANS[0]; index: n
         <div className="absolute -top-0 left-0 right-0 flex justify-center pt-3">
           <span
             className="text-xs font-extrabold uppercase tracking-widest px-5 py-1.5 rounded-full text-gray-900 shadow-lg"
-            style={{ background: '#C6E700' }}
+            style={{ background: '#84CC4A' }}
           >
             ✨ Most Popular
           </span>
@@ -133,7 +133,7 @@ function PricingCard({ plan, index, visible }: { plan: typeof PLANS[0]; index: n
             <li key={f} className="flex items-start gap-3 text-sm">
               <span
                 className="mt-0.5 w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 text-gray-900"
-                style={{ background: '#C6E700' }}
+                style={{ background: '#84CC4A' }}
               >
                 <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
@@ -148,14 +148,14 @@ function PricingCard({ plan, index, visible }: { plan: typeof PLANS[0]; index: n
         <Link
           href="/contact"
           className="group relative overflow-hidden block text-center py-4 rounded-2xl font-bold text-base"
-          style={{ background: '#C6E700', color: '#1a2000' }}
+          style={{ background: '#84CC4A', color: '#1A6B35' }}
         >
           <span className="relative z-10 group-hover:text-white transition-colors duration-300">
             Book Now →
           </span>
           <span
             className="absolute inset-0 translate-y-full group-hover:translate-y-0 transition-transform duration-300 rounded-2xl"
-            style={{ background: '#1a2000' }}
+            style={{ background: '#1A6B35' }}
           />
         </Link>
       </div>
@@ -201,7 +201,7 @@ export default function Pricing() {
             style={{
               width: `${10 + i * 6}px`,
               height: `${10 + i * 6}px`,
-              background: '#C6E700',
+              background: '#84CC4A',
               opacity: 0.15 + i * 0.04,
               top: `${10 + i * 14}%`,
               left: i % 2 === 0 ? `${2 + i * 2}%` : `${88 - i * 2}%`,
@@ -216,7 +216,7 @@ export default function Pricing() {
           <div className="text-center mb-12">
             <span
               className="inline-block text-xs font-bold uppercase tracking-widest px-5 py-2 rounded-full mb-5 text-gray-900"
-              style={{ background: '#C6E700' }}
+              style={{ background: '#84CC4A' }}
             >
               Transparent Pricing
             </span>

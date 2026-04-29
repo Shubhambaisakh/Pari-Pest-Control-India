@@ -59,7 +59,7 @@ export default function Features() {
         <div className="text-center mb-10">
           <span
             className="inline-block text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4 text-gray-900"
-            style={{ background: '#C6E700' }}
+            style={{ background: '#84CC4A' }}
           >
             Why We Are Best?
           </span>
@@ -73,7 +73,7 @@ export default function Features() {
         <div
           ref={barRef}
           className="grid grid-cols-2 md:grid-cols-4 mb-14 rounded-3xl overflow-hidden shadow-md"
-          style={{ background: '#C6E700' }}
+          style={{ background: '#84CC4A' }}
         >
           {STATS.map((stat, i) => (
             <div

@@ -9,17 +9,17 @@ const config: Config = {
     extend: {
       colors: {
         brand: {
-          50:  '#f7ffd0',
-          100: '#eeff99',
-          200: '#d9f542',
-          500: '#C6E700',   // exact primary
-          600: '#A8D800',   // hover gradient
-          700: '#7a9900',   // dark
-          900: '#3a4a00',   // darkest
+          50:  '#f2fce8',
+          100: '#dff5c0',
+          200: '#c2eb8a',
+          500: '#84CC4A',   // primary — medium lighter green
+          600: '#6ab535',   // hover
+          700: '#2d8a4e',   // dark green
+          900: '#1A6B35',   // deep forest green
         },
       },
       fontFamily: {
-        sans: ['Poppins', 'sans-serif'],
+        sans: ['Plus Jakarta Sans', 'sans-serif'],
       },
       keyframes: {
         fadeSlide: {

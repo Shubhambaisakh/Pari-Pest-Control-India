@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,7 +6,7 @@
 
 @layer base {
   html { scroll-behavior: smooth; }
-  body { font-family: 'Poppins', sans-serif; cursor: none; }
+  body { font-family: 'Plus Jakarta Sans', sans-serif; cursor: none; }
   * { cursor: none !important; }
 }
 
@@ -48,7 +48,7 @@
 /* ── Mobile premium feel ── */
 @media (max-width: 767px) {
   /* Smooth tap highlight */
-  * { -webkit-tap-highlight-color: rgba(198,231,0,0.2); }
+  * { -webkit-tap-highlight-color: rgba(132,204,74,0.2); }
 
   /* Better touch targets */
   button, a { min-height: 44px; }
@@ -67,4 +67,11 @@
 .pricing-overlap-wrapper { margin-top: -80px; }
 @media (max-width: 767px) {
   .pricing-overlap-wrapper { margin-top: 0; }
+}
+
+/* ── Pop-in animation for gallery cards ── */
+@keyframes popIn {
+  0%   { opacity: 0; transform: scale(0.85) translateY(20px); }
+  60%  { transform: scale(1.04) translateY(-4px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
 }

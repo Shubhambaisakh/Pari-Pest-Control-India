@@ -1,152 +1,218 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
+import PopText from '@/components/shared/PopText';
 import Image from 'next/image';
 import Link from 'next/link';
 
 const SLIDES = [
   {
-    bg: '/pest control1.webp',
     photo: '/frontpage1.jpeg',
-    badge: '🌿 Eco-Friendly Solutions',
-    heading: 'Pest Control Services\nfor Indian Households!',
-    sub: 'Professional, certified, eco-friendly pest control. We eliminate ants, cockroaches, rodents & more — guaranteed.',
-    cta: 'Book Free Inspection',
-    ctaHref: '/contact',
+    heading: { line1: 'One Package To', line2: 'Keep Your', line3: 'Home', line4: 'Pest-Free!' },
   },
   {
-    bg: '/pest control2.webp',
     photo: '/frontpage2.jpeg',
-    badge: '🏆 10+ Years of Trust',
-    heading: 'Complete Pest-Free\nEnvironment Guaranteed!',
-    sub: 'From termites to bed bugs, our certified technicians handle every pest problem with family-safe treatments.',
-    cta: 'View Our Services',
-    ctaHref: '/services',
+    heading: { line1: 'Complete Pest-Free', line2: 'Environment', line3: 'Guaranteed', line4: 'Today!' },
   },
   {
-    bg: '/pest control 3.webp',
     photo: '/frontpage3.jpg',
-    badge: '⚡ Quick Response',
-    heading: "Bhopal's Most Trusted\nPest Control Company!",
-    sub: 'Serving Bhopal & Mandideep. ISO certified, MSME registered, IPCA member.',
-    cta: 'Contact Us Now',
-    ctaHref: '/contact',
+    heading: { line1: "Bhopal's Most", line2: 'Trusted Pest', line3: 'Control', line4: 'Company!' },
   },
+];
+
+const PRIMARY = '#1A6B35';
+const ACCENT  = '#84CC4A';
+const BG      = '#E6F0D5';
+
+// Floating trust badges
+const BADGES = [
+  { icon: '🏆', title: '10+ Years',    sub: 'of Experience',    pos: 'bottom-6 left-4' },
+  { icon: '✅', title: 'ISO Certified', sub: 'MSME Registered',  pos: 'top-6 right-4' },
+  { icon: '⭐', title: '5000+ Clients', sub: 'Across Bhopal',    pos: 'top-1/2 -left-4' },
 ];
 
 export default function HeroSlider() {
   const [current, setCurrent] = useState(0);
-  const [visible, setVisible] = useState(true);
 
   const goTo = useCallback((index: number) => {
-    setVisible(false);
-    setTimeout(() => {
-      setCurrent((index + SLIDES.length) % SLIDES.length);
-      setVisible(true);
-    }, 300);
+    setCurrent((index + SLIDES.length) % SLIDES.length);
   }, []);
 
   useEffect(() => {
-    const timer = setInterval(() => goTo(current + 1), 4000);
+    const timer = setInterval(() => goTo(current + 1), 5000);
     return () => clearInterval(timer);
   }, [current, goTo]);
 
   const slide = SLIDES[current];
 
   return (
-    <section className="relative w-full overflow-hidden" style={{ minHeight: '100svh' }}>
-      {/* Background */}
+    <section className="relative w-full overflow-hidden" style={{ background: BG, minHeight: 'auto' }}>
+
+      {/* ── BACKGROUND IMAGE ── */}
       <div className="absolute inset-0 z-0">
-        <Image src={slide.bg} alt="Hero" fill className="object-cover" priority unoptimized />
-        <div className="absolute inset-0" style={{ background: 'rgba(198,231,0,0.82)' }} />
+        <Image
+          src="/ChatGPT Image Apr 29, 2026, 03_25_10 PM.png"
+          alt="PPCI pest control background"
+          fill
+          className="object-cover object-center"
+          priority
+          unoptimized
+        />
+        <div className="absolute inset-0" style={{ background: 'rgba(230,240,213,0.80)' }} />
       </div>
 
-      {/* Content */}
-      <div
-        className="relative z-10 max-w-7xl mx-auto px-5 pt-10 pb-28 md:py-28 flex flex-col md:flex-row items-center gap-8 md:gap-12"
-        style={{ opacity: visible ? 1 : 0, transition: 'opacity 0.3s ease' }}
-      >
-        {/* Left */}
-        <div className="flex-1 flex flex-col items-start w-full">
-          <span className="inline-flex items-center gap-2 bg-gray-900 text-white text-xs font-semibold px-4 py-1.5 rounded-full mb-4 shadow-md">
-            {slide.badge}
-          </span>
+      <div className="max-w-7xl mx-auto px-4 pt-8 pb-20 md:py-20 flex flex-col md:flex-row items-center gap-8 md:gap-12 relative z-10 min-h-screen md:min-h-0">
 
-          <h1 data-cursor-zone="hero-heading" className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-4 text-gray-900 whitespace-pre-line">
-            {slide.heading}
+        {/* ── LEFT ── */}
+        <div className="flex-1 flex flex-col items-start w-full">
+
+          {/* Heading */}
+          <h1
+            data-cursor-zone="hero-heading"
+            className="font-extrabold leading-tight mb-4 w-full"
+            style={{ fontSize: 'clamp(1.6rem, 6vw, 3.2rem)' }}
+          >
+            <PopText text={slide.heading.line1} color={PRIMARY} />
+            <br />
+            <PopText text={slide.heading.line2 + ' '} color={PRIMARY} />
+            <PopText text={slide.heading.line3} color={ACCENT} />
+            <br />
+            <PopText text={slide.heading.line4} color={ACCENT} />
           </h1>
 
-          <p className="text-gray-800 text-sm md:text-lg leading-relaxed mb-6 max-w-lg font-medium">
-            {slide.sub}
+          {/* Subtext */}
+          <p className="text-sm leading-relaxed mb-5 max-w-md" style={{ color: '#444' }}>
+            Stop booking multiple services today! Effective, affordable, and family-friendly solutions, guaranteed!
           </p>
 
-          {/* Bullet points — hidden on very small screens */}
-          <ul className="hidden sm:flex flex-col space-y-2 mb-6">
-            {['Free inspection by trained staff', 'Eco-friendly spray & gel treatment', 'Complete elimination guaranteed'].map(p => (
-              <li key={p} className="flex items-center gap-3 text-sm font-semibold text-gray-900">
-                <span className="w-5 h-5 rounded-full bg-gray-900 flex items-center justify-center flex-shrink-0">
+          {/* Checkmarks */}
+          <div className="flex flex-col gap-2 mb-6">
+            {['Free evaluation by skilled experts', 'Employing eco-friendly gels and sprays'].map(p => (
+              <div key={p} className="flex items-center gap-2">
+                <span className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: ACCENT }}>
                   <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
                 </span>
-                {p}
-              </li>
+                <span className="text-xs sm:text-sm font-semibold" style={{ color: PRIMARY }}>{p}</span>
+              </div>
             ))}
-          </ul>
+          </div>
 
-          {/* CTA buttons — full width on mobile */}
+          {/* Buttons — full width on mobile */}
           <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
-            <Link href={slide.ctaHref}
-              className="text-center px-7 py-3.5 rounded-full font-bold text-white text-sm shadow-lg transition-all duration-300 active:scale-95"
-              style={{ background: '#1a2000' }}>
-              {slide.cta} →
+            <Link
+              href="/contact"
+              className="text-center px-6 py-3 rounded-xl font-bold text-white text-sm shadow-lg w-full sm:w-auto"
+              style={{
+                background: 'linear-gradient(135deg, #1A6B35 0%, #84CC4A 100%)',
+                animation: 'pulseGlow 2s ease-in-out infinite',
+              }}
+            >
+              Book Now
             </Link>
-            <a href="tel:18003094947"
-              className="text-center px-7 py-3.5 rounded-full font-bold text-gray-900 text-sm border-2 border-gray-900 transition-all duration-300 active:scale-95">
-              📞 1800-309-4947
+            <a
+              href="tel:18003094947"
+              className="text-center px-5 py-3 rounded-lg font-bold text-sm border-2 flex items-center justify-center gap-2 w-full sm:w-auto"
+              style={{ borderColor: PRIMARY, color: PRIMARY, background: 'white' }}
+            >
+              <svg className="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+              </svg>
+              1800-309-4947
             </a>
+          </div>
+
+          {/* Mobile badges — show only on mobile */}
+          <div className="flex gap-2 mt-5 w-full md:hidden">
+            {[
+              { icon: '🏆', title: '10+ Years',    sub: 'Experience' },
+              { icon: '✅', title: 'ISO Certified', sub: 'MSME Reg.' },
+              { icon: '⭐', title: '5000+ Clients', sub: 'Bhopal' },
+            ].map((b, i) => (
+              <div key={i} className="flex-1 bg-white rounded-xl px-2 py-2 shadow flex items-center gap-1.5"
+                style={{ border: `1.5px solid ${ACCENT}` }}>
+                <span className="text-base flex-shrink-0">{b.icon}</span>
+                <div className="min-w-0">
+                  <p className="text-xs font-extrabold leading-none truncate" style={{ color: PRIMARY }}>{b.title}</p>
+                  <p className="text-[10px] text-gray-400 mt-0.5 truncate">{b.sub}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
 
-        {/* Right image — hidden on mobile to save space */}
-        <div className="hidden md:block flex-1 relative w-full max-w-lg">
-          <div
-            className="relative w-full rounded-3xl overflow-hidden shadow-2xl"
-            style={{
-              height: '380px',
-              border: '3px solid rgba(0,0,0,0.15)',
-            }}
-          >
-            <Image src={slide.photo} alt="PPCI work" fill className="object-cover object-center" unoptimized />
+        {/* ── RIGHT — desktop only ── */}
+        <div className="flex-1 relative w-full max-w-xl hidden md:flex flex-col items-center gap-4">
+          <div className="relative w-full rounded-3xl overflow-hidden shadow-2xl"
+            style={{ height: '380px', border: `3px solid rgba(26,107,53,0.15)` }}>
+            <Image src={slide.photo} alt="PPCI pest control technician" fill className="object-cover object-center" unoptimized />
           </div>
-          <div className="absolute -bottom-4 -left-4 bg-white rounded-2xl px-5 py-3 shadow-xl flex items-center gap-3" style={{ border: '2px solid #C6E700' }}>
-            <span className="text-2xl">🏆</span>
-            <div>
-              <p className="text-lg font-extrabold leading-none" style={{ color: '#7a9900' }}>10+ Years</p>
-              <p className="text-xs text-gray-500 mt-0.5">of Experience</p>
-            </div>
+          <div className="flex gap-3 w-full">
+            {[
+              { icon: '🏆', title: '10+ Years',     sub: 'of Experience',   delay: '0s'    },
+              { icon: '✅', title: 'ISO Certified',  sub: 'MSME Registered', delay: '0.15s' },
+              { icon: '⭐', title: '5000+ Clients',  sub: 'Across Bhopal',   delay: '0.3s'  },
+            ].map((b, i) => (
+              <div key={i} className="flex-1 bg-white rounded-2xl px-3 py-3 shadow-lg flex items-center gap-2"
+                style={{ border: `2px solid ${ACCENT}`, animation: `floatBadge 3s ease-in-out ${b.delay} infinite` }}>
+                <span className="text-xl flex-shrink-0">{b.icon}</span>
+                <div>
+                  <p className="text-sm font-extrabold leading-none" style={{ color: PRIMARY }}>{b.title}</p>
+                  <p className="text-xs text-gray-500 mt-0.5">{b.sub}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
 
-      {/* Arrows — smaller on mobile */}
+      {/* Arrows — bottom center on mobile, sides on desktop */}
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex gap-4 md:hidden">
+        <button onClick={() => goTo(current - 1)}
+          className="w-11 h-11 rounded-full shadow-lg flex items-center justify-center font-bold text-xl text-white"
+          style={{ background: 'linear-gradient(135deg, #1A6B35 0%, #84CC4A 100%)' }}
+          aria-label="Previous">‹</button>
+        <button onClick={() => goTo(current + 1)}
+          className="w-11 h-11 rounded-full shadow-lg flex items-center justify-center font-bold text-xl text-white"
+          style={{ background: 'linear-gradient(135deg, #1A6B35 0%, #84CC4A 100%)' }}
+          aria-label="Next">›</button>
+      </div>
+      {/* Desktop arrows — sides */}
       <button onClick={() => goTo(current - 1)}
-        className="absolute left-3 top-1/2 -translate-y-1/2 z-20 w-9 h-9 md:w-11 md:h-11 rounded-full bg-white/80 shadow-lg flex items-center justify-center text-gray-900 font-bold text-lg md:text-xl transition-all duration-200 active:scale-90"
-        aria-label="Previous slide">‹</button>
-
+        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full shadow-lg items-center justify-center font-bold text-xl text-white hidden md:flex"
+        style={{ background: 'linear-gradient(135deg, #1A6B35 0%, #84CC4A 100%)' }}
+        aria-label="Previous">‹</button>
       <button onClick={() => goTo(current + 1)}
-        className="absolute right-3 top-1/2 -translate-y-1/2 z-20 w-9 h-9 md:w-11 md:h-11 rounded-full bg-white/80 shadow-lg flex items-center justify-center text-gray-900 font-bold text-lg md:text-xl transition-all duration-200 active:scale-90"
-        aria-label="Next slide">›</button>
+        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full shadow-lg items-center justify-center font-bold text-xl text-white hidden md:flex"
+        style={{ background: 'linear-gradient(135deg, #1A6B35 0%, #84CC4A 100%)' }}
+        aria-label="Next">›</button>
 
       {/* Dots */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-2">
+      <div className="absolute bottom-3 left-1/2 -translate-x-1/2 z-20 flex gap-2">
         {SLIDES.map((_, i) => (
           <button key={i} onClick={() => goTo(i)}
             className="rounded-full transition-all duration-300"
-            style={{ width: i === current ? '24px' : '8px', height: '8px', background: i === current ? '#1a2000' : 'rgba(0,0,0,0.3)' }}
+            style={{ width: i === current ? '28px' : '8px', height: '8px', background: i === current ? PRIMARY : `${PRIMARY}66` }}
             aria-label={`Slide ${i + 1}`} />
         ))}
       </div>
+
+      {/* All keyframes */}
+      <style>{`
+        @keyframes pulseGlow {
+          0%, 100% { box-shadow: 0 4px 15px rgba(26,107,53,0.4), 0 0 0 0 rgba(132,204,74,0.4); transform: scale(1); }
+          50%       { box-shadow: 0 4px 25px rgba(26,107,53,0.6), 0 0 0 10px rgba(132,204,74,0); transform: scale(1.03); }
+        }
+        @keyframes floatBadge {
+          0%, 100% { transform: translateY(0px); }
+          50%       { transform: translateY(-8px); }
+        }
+        @keyframes highlightWipe {
+          from { transform: scaleX(0); transform-origin: left; }
+          to   { transform: scaleX(1); transform-origin: left; }
+        }
+      `}</style>
     </section>
   );
 }

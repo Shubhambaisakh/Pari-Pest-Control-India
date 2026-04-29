@@ -5,7 +5,7 @@ export default function MobileBottomBar() {
       <a
         href="tel:18003094947"
         className="flex-1 flex flex-col items-center justify-center py-3 gap-0.5 text-gray-900 font-bold text-xs active:opacity-70 transition-opacity"
-        style={{ background: '#C6E700' }}
+        style={{ background: '#84CC4A' }}
       >
         <span className="text-xl">📞</span>
         <span>Call Now</span>
@@ -23,7 +23,7 @@ export default function MobileBottomBar() {
       <a
         href="/contact"
         className="flex-1 flex flex-col items-center justify-center py-3 gap-0.5 text-white font-bold text-xs active:opacity-70 transition-opacity"
-        style={{ background: '#1a2000' }}
+        style={{ background: 'linear-gradient(135deg, #1A6B35 0%, #84CC4A 100%)' }}
       >
         <span className="text-xl">📋</span>
         <span>Book Now</span>

@@ -58,7 +58,7 @@ export default function StatsCounter() {
     <section ref={ref} className="px-4 py-6">
       <div
         className="max-w-4xl mx-auto rounded-2xl px-8 py-6 grid grid-cols-2 md:grid-cols-4 gap-0"
-        style={{ background: '#C6E700' }}
+        style={{ background: '#84CC4A' }}
       >
         {STATS.map((stat, i) => (
           <div

@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body style={{ fontFamily: "'Poppins', sans-serif" }}>
+      <body style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
         <CustomCursor />
         <Navbar />
         <main className="pb-16 md:pb-0">{children}</main>

@@ -3,6 +3,8 @@
 import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import PopText from '@/components/shared/PopText';
+import PopPhone from '@/components/shared/PopPhone';
 
 const SERVICES = [
   {
@@ -273,7 +275,7 @@ function ServiceCard({ service, index }: { service: typeof SERVICES[0]; index: n
               href="/contact"
               className="group/btn relative overflow-hidden px-6 py-3 rounded-2xl font-bold text-sm text-gray-900 shadow-md"
               style={{
-                background: '#C6E700',
+                background: '#84CC4A',
                 transform: hovered ? 'scale(1.05)' : 'scale(1)',
                 transition: 'transform 0.3s ease',
                 boxShadow: hovered ? `0 8px 24px ${service.accent}55` : '0 4px 12px rgba(0,0,0,0.1)',
@@ -298,7 +300,7 @@ export default function ServicesPage() {
   return (
     <>
       {/* Page Header */}
-      <section className="relative py-20 px-4 text-center overflow-hidden" style={{ background: '#C6E700' }}>
+      <section className="relative py-20 px-4 text-center overflow-hidden" style={{ background: '#84CC4A' }}>
         <div className="absolute inset-0">
           <Image src="/pest control1.webp" alt="bg" fill className="object-cover opacity-10" unoptimized />
         </div>
@@ -306,13 +308,16 @@ export default function ServicesPage() {
           <p className="text-gray-700 text-sm mb-2">
             <Link href="/" className="hover:underline font-semibold">Home</Link> / Services
           </p>
-          <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">Our Pest Control Services</h1>
+          <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">
+            <PopText text="Our Pest Control Services" color="#111827" />
+          </h1>
           <p className="text-gray-700 text-lg mb-6">Complete Pest Control Solutions — Residential &amp; Commercial</p>
           <a
             href="tel:18003094947"
-            className="inline-block bg-gray-900 text-white font-bold px-8 py-3 rounded-full hover:opacity-90 transition-all shadow-lg"
+            className="inline-flex items-center gap-3 bg-gray-900 text-white font-bold px-8 py-3 rounded-full hover:opacity-90 transition-all shadow-lg"
           >
-            📞 Book Now — 1800-309-4947
+            <span>📞 Book Now —</span>
+            <PopPhone number="1800-309-4947" baseColor="#ffffff" accentColor="#84CC4A" fontSize="1rem" />
           </a>
         </div>
       </section>
@@ -341,7 +346,7 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-14 px-4 text-center" style={{ background: '#C6E700' }}>
+      <section className="py-14 px-4 text-center" style={{ background: '#84CC4A' }}>
         <h2 className="text-2xl font-extrabold text-gray-900 mb-3">Ready to Book a Service?</h2>
         <p className="text-gray-700 mb-6">Call us toll-free or WhatsApp for instant booking.</p>
         <div className="flex flex-wrap justify-center gap-4">

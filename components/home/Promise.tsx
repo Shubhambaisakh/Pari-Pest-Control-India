@@ -17,31 +17,24 @@ export default function Promise() {
 
   return (
     <section className="py-20 px-4" style={{ background: '#f5ffe0' }}>
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-16">
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10 md:gap-16">
 
-        {/* Left — Logo with yellow glow */}
+        {/* Left — Logo — smaller on mobile */}
         <div className="flex-shrink-0 flex flex-col items-center w-full md:w-72">
           <div className="relative flex items-center justify-center">
-            <div className="absolute w-72 h-72 rounded-full pointer-events-none"
+            <div className="absolute w-48 h-48 md:w-72 md:h-72 rounded-full pointer-events-none"
               style={{ background: 'radial-gradient(circle, rgba(255,220,0,0.5) 0%, rgba(255,200,0,0.15) 50%, transparent 75%)' }} />
-            <div className="absolute w-52 h-52 rounded-full pointer-events-none"
-              style={{ background: 'radial-gradient(circle, rgba(255,230,0,0.3) 0%, transparent 65%)' }} />
-            <div className="relative w-52 h-52 z-10">
-              <Image
-                src="/Logo_PPCI-removebg-preview.png"
-                alt="Pari Pest Control India Logo"
-                fill
-                className="object-contain drop-shadow-2xl"
-              />
+            <div className="relative w-36 h-36 md:w-52 md:h-52 z-10">
+              <Image src="/Logo_PPCI-removebg-preview.png" alt="Pari Pest Control India Logo" fill className="object-contain drop-shadow-2xl" />
             </div>
           </div>
-          <p className="text-xl font-extrabold text-gray-900 mt-4 text-center leading-tight">Pari Pest Control</p>
-          <p className="text-lg font-bold text-center" style={{ color: '#7a9900' }}>India Pvt. Ltd.</p>
+          <p className="text-lg md:text-xl font-extrabold text-gray-900 mt-3 text-center leading-tight">Pari Pest Control</p>
+          <p className="text-base md:text-lg font-bold text-center" style={{ color: '#2d8a4e' }}>India Pvt. Ltd.</p>
           <p className="text-xs font-semibold text-gray-400 text-center mt-1 tracking-widest">PPCI PVT. LTD.</p>
         </div>
 
         {/* Right — 2×3 grid */}
-        <div className="flex-1 grid grid-cols-2 gap-4">
+        <div className="flex-1 grid grid-cols-2 gap-3 md:gap-4 w-full">
           {PROMISES.map((p, i) => {
             const isHov = hovered === i;
             const anyHov = hovered !== null;
@@ -53,7 +46,7 @@ export default function Promise() {
                 className="flex flex-col items-center text-center rounded-2xl p-5 cursor-default"
                 style={{
                   background: isHov ? 'white' : p.bg,
-                  border: isHov ? '1.5px solid #C6E700' : '1.5px solid transparent',
+                  border: isHov ? '1.5px solid #84CC4A' : '1.5px solid transparent',
                   boxShadow: isHov ? '0 12px 32px rgba(0,0,0,0.12)' : '0 2px 8px rgba(0,0,0,0.04)',
                   transform: isHov ? 'scale(1.05) translateY(-4px)' : 'scale(1)',
                   opacity: anyHov && !isHov ? 0.68 : 1,

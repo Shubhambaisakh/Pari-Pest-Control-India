@@ -8,6 +8,7 @@ import ClientsCarousel from '@/components/home/ClientsCarousel';
 import HowItWorks from '@/components/home/HowItWorks';
 import StatsCounter from '@/components/home/StatsCounter';
 import Pricing from '@/components/home/Pricing';
+import PopPhone from '@/components/shared/PopPhone';
 import Link from 'next/link';
 
 export default function HomePage() {
@@ -32,22 +33,22 @@ export default function HomePage() {
       <Testimonials />
 
       {/* Final CTA */}
-      <section className="py-16 px-4 text-center" style={{ background: '#C6E700' }}>
+      <section className="py-16 px-4 text-center" style={{ background: '#84CC4A' }}>
         <h2 className="text-3xl font-extrabold text-gray-900 mb-3">
           Ready to Live Pest-Free?
         </h2>
         <p className="text-gray-700 mb-2 font-medium">
           Contact Pari Pest Control India Private Limited today for a free inspection.
         </p>
-        <p className="text-2xl font-extrabold text-gray-900 mb-8">
-          <a href="tel:18003094947" className="hover:underline">1800-309-4947</a>
+        <p className="text-2xl font-extrabold text-gray-900 mb-8 flex items-center justify-center gap-1 flex-wrap">
+          <PopPhone number="1800-309-4947" baseColor="#111" accentColor="#1A6B35" fontSize="1.5rem" />
           <span className="text-sm font-normal text-gray-600 ml-2">(Toll Free)</span>
         </p>
         <div className="flex flex-wrap justify-center gap-4">
           <Link
             href="/contact"
-            className="px-8 py-3 rounded-full font-bold text-white text-sm shadow-lg hover:opacity-90 transition-all duration-300 hover:scale-105"
-            style={{ background: '#1a2000' }}
+            className="px-8 py-3 rounded-xl font-bold text-white text-sm shadow-lg hover:opacity-90 transition-all duration-300 hover:scale-105"
+            style={{ background: 'linear-gradient(135deg, #1A6B35 0%, #84CC4A 100%)', boxShadow: '0 4px 15px rgba(26,107,53,0.4)' }}
           >
             Get a Free Quote
           </Link>

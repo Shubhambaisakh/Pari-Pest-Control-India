@@ -9,7 +9,7 @@ const REVIEWS = [
     text: 'Booked them for cockroach treatment. Technician came on time, used gel bait in the kitchen — no smell at all. 3 months gone and not a single cockroach. Worth every rupee.',
     rating: 5,
     avatar: 'https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=80&h=80&fit=crop&crop=face',
-    color: '#C6E700',
+    color: '#84CC4A',
     bg: '#f9ffe0',
   },
   {
@@ -112,7 +112,7 @@ export default function Testimonials() {
         <div className="text-center mb-14">
           <span
             className="inline-block text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4 text-gray-900"
-            style={{ background: '#C6E700' }}
+            style={{ background: '#84CC4A' }}
           >
             Client Reviews
           </span>
@@ -196,7 +196,7 @@ export default function Testimonials() {
                 style={{
                   width: i === current ? '24px' : '8px',
                   height: '8px',
-                  background: i === current ? '#C6E700' : '#d1d5db',
+                  background: i === current ? '#84CC4A' : '#d1d5db',
                 }}
               />
             ))}

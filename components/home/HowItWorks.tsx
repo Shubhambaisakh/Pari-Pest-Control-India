@@ -68,7 +68,7 @@ function StepCard({ step, index }: { step: typeof STEPS[0]; index: number }) {
         <span
           className="absolute text-8xl font-extrabold select-none pointer-events-none"
           style={{
-            color: '#C6E700',
+            color: '#84CC4A',
             opacity: 0.45,
             top: '-22px',
             left: '50%',
@@ -117,7 +117,7 @@ export default function HowItWorks() {
           <div className="text-center mb-16">
             <span
               className="inline-block text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4 text-gray-900"
-              style={{ background: '#C6E700' }}
+              style={{ background: '#84CC4A' }}
             >
               Simple Steps
             </span>
@@ -135,7 +135,7 @@ export default function HowItWorks() {
                 {i < STEPS.length - 1 && (
                   <div
                     className="hidden md:flex items-center justify-center flex-shrink-0 text-3xl font-light mt-[-72px] mx-[-10px]"
-                    style={{ color: '#C6E700' }}
+                    style={{ color: '#84CC4A' }}
                   >
                     ›
                   </div>

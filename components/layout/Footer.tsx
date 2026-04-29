@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 export default function Footer() {
   return (
-    <footer style={{ background: '#1a2000', color: 'white' }}>
+    <footer style={{ background: '#1A6B35', color: 'white' }}>
       <div className="max-w-7xl mx-auto px-4 py-12">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
 
@@ -13,7 +13,7 @@ export default function Footer() {
               <Image src="/Logo_PPCI-removebg-preview.png" alt="PPCI Logo" width={52} height={52} className="rounded-full object-contain" />
               <div>
                 <h2 className="text-base font-bold leading-tight">Pari Pest Control India</h2>
-                <p className="text-xs font-semibold" style={{ color: '#C6E700' }}>PPCI PVT. LTD.</p>
+                <p className="text-xs font-semibold" style={{ color: '#84CC4A' }}>PPCI PVT. LTD.</p>
               </div>
             </div>
             <p className="text-sm text-gray-400 leading-relaxed">
@@ -23,7 +23,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-base font-bold mb-4" style={{ color: '#C6E700' }}>Quick Links</h3>
+            <h3 className="text-base font-bold mb-4" style={{ color: '#84CC4A' }}>Quick Links</h3>
             <ul className="space-y-2 text-sm text-gray-400">
               <li><Link href="/" className="hover:text-white transition-colors">Home</Link></li>
               <li><Link href="/services" className="hover:text-white transition-colors">Services</Link></li>
@@ -34,7 +34,7 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h3 className="text-base font-bold mb-4" style={{ color: '#C6E700' }}>Contact Us</h3>
+            <h3 className="text-base font-bold mb-4" style={{ color: '#84CC4A' }}>Contact Us</h3>
             <ul className="space-y-3 text-sm text-gray-400">
               <li className="flex items-start gap-2">
                 <span>📞</span>
@@ -63,7 +63,7 @@ export default function Footer() {
 
           {/* Social */}
           <div>
-            <h3 className="text-base font-bold mb-4" style={{ color: '#C6E700' }}>Follow Us</h3>
+            <h3 className="text-base font-bold mb-4" style={{ color: '#84CC4A' }}>Follow Us</h3>
             <div className="flex flex-col gap-3">
 
               {/* Instagram */}
@@ -114,27 +114,12 @@ export default function Footer() {
                 YouTube
               </a>
 
-              {/* LinkedIn */}
-              <a
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-3 text-sm text-gray-400 hover:text-white transition-colors group"
-              >
-                <span className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform"
-                  style={{ background: '#0A66C2' }}>
-                  <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                  </svg>
-                </span>
-                LinkedIn
-              </a>
-
             </div>
+
             <a
               href="tel:18003094947"
-              className="inline-block mt-5 px-5 py-2 rounded-full text-sm font-bold text-gray-900 hover:opacity-90 transition-all"
-              style={{ background: '#C6E700' }}
+              className="inline-block mt-5 px-5 py-2 rounded-xl text-sm font-bold text-white hover:opacity-90 transition-all"
+              style={{ background: 'linear-gradient(135deg, #1A6B35 0%, #84CC4A 100%)' }}
             >
               📞 Get a Free Quote
             </a>
@@ -142,7 +127,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div style={{ borderTop: '1px solid #3a4a00' }}>
+      <div style={{ borderTop: '1px solid #0d4a1f' }}>
         <p className="text-center text-xs py-4 text-gray-500">
           © {new Date().getFullYear()} Pari Pest Control India Private Limited. All rights reserved.
         </p>

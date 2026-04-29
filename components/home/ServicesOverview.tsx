@@ -169,7 +169,7 @@ export default function ServicesOverview() {
         <div className="text-center mb-10 md:mb-14">
           <span
             className="inline-block text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4 text-gray-900"
-            style={{ background: '#C6E700' }}
+            style={{ background: '#84CC4A' }}
           >
             We Are Specialized In
           </span>
@@ -190,7 +190,7 @@ export default function ServicesOverview() {
           <Link
             href="/services"
             className="inline-block px-8 py-3 rounded-full font-bold text-gray-900 text-sm shadow-md hover:opacity-90 transition-all duration-200 hover:scale-105"
-            style={{ background: '#C6E700' }}
+            style={{ background: '#84CC4A' }}
           >
             View All Services →
           </Link>

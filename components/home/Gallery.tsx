@@ -8,9 +8,9 @@ const PHOTOS = [
   { src: '/frontpage1.jpeg', alt: 'PPCI team at Fusion 2026 pest management conference', label: 'Industry Leaders' },
   { src: '/frontpage2.jpeg', alt: 'PPCI certified pest control treatment at client site', label: 'Expert Treatment' },
   { src: '/frontpage3.jpg',  alt: 'PPCI eco-friendly pest control in Bhopal', label: 'Eco-Friendly' },
-  { src: '/pest control1.webp', alt: 'PPCI technician performing pest control', label: 'Professional Work' },
-  { src: '/pest control2.webp', alt: 'PPCI pest control at commercial premises', label: 'Commercial Services' },
-  { src: '/pest control 3.webp', alt: 'PPCI pest control treatment Bhopal', label: 'Trusted Service' },
+  { src: '/ChatGPT Image May 1, 2026, 01_03_30 AM.png', alt: 'PPCI pest control treatment', label: 'Professional Work' },
+  { src: '/ChatGPT Image May 1, 2026, 01_08_41 AM.png', alt: 'PPCI pest control at commercial premises', label: 'Commercial Services' },
+  { src: '/ChatGPT Image May 1, 2026, 01_16_26 AM.png', alt: 'PPCI pest control treatment Bhopal', label: 'Trusted Service' },
 ];
 
 const SERVICES_LIST = [

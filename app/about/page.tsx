@@ -139,12 +139,12 @@ export default function AboutPage() {
           <h2 className="text-2xl font-bold text-gray-800 text-center mb-8">Our Work</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              { src: '/pest control1.webp', alt: 'PPCI fogging treatment' },
-              { src: '/pest control2.webp', alt: 'PPCI pest control at work' },
-              { src: '/pest control 3.webp', alt: 'PPCI technician in action' },
+              { src: '/ChatGPT Image May 1, 2026, 01_03_30 AM.png', alt: 'PPCI pest control treatment' },
+              { src: '/ChatGPT Image May 1, 2026, 01_08_41 AM.png', alt: 'PPCI pest control at work' },
+              { src: '/ChatGPT Image May 1, 2026, 01_16_26 AM.png', alt: 'PPCI technician in action' },
             ].map((img) => (
               <div key={img.src} className="relative rounded-2xl overflow-hidden shadow-md" style={{ aspectRatio: '4/3' }}>
-                <Image src={img.src} alt={img.alt} fill className="object-cover hover:scale-105 transition-transform duration-500" unoptimized />
+                <Image src={img.src} alt={img.alt} fill className="object-cover object-center hover:scale-105 transition-transform duration-500" unoptimized />
               </div>
             ))}
           </div>

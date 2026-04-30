@@ -336,9 +336,13 @@ export default function ServicesPage() {
         <div className="max-w-5xl mx-auto">
           <h2 className="text-2xl font-extrabold text-gray-800 text-center mb-8">Our Work in Action</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-            {['/pest control1.webp', '/pest control2.webp', '/pest control 3.webp'].map((src) => (
+            {[
+              '/ChatGPT Image May 1, 2026, 01_03_30 AM.png',
+              '/ChatGPT Image May 1, 2026, 01_08_41 AM.png',
+              '/ChatGPT Image May 1, 2026, 01_16_26 AM.png',
+            ].map((src) => (
               <div key={src} className="relative rounded-2xl overflow-hidden shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300" style={{ aspectRatio: '16/9' }}>
-                <Image src={src} alt="PPCI work" fill className="object-cover" unoptimized />
+                <Image src={src} alt="PPCI work" fill className="object-cover object-center" unoptimized />
               </div>
             ))}
           </div>

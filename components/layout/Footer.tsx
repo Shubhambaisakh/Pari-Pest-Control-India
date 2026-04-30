@@ -128,8 +128,11 @@ export default function Footer() {
       </div>
 
       <div style={{ borderTop: '1px solid #0d4a1f' }}>
-        <p className="text-center text-xs py-4 text-gray-500">
+        <p className="text-center text-xs py-3 text-gray-500">
           © {new Date().getFullYear()} Pari Pest Control India Private Limited. All rights reserved.
+        </p>
+        <p className="text-center text-xs pb-3" style={{ color: '#84CC4A' }}>
+          Design by <span className="font-semibold">adwikindia</span>
         </p>
       </div>
     </footer>

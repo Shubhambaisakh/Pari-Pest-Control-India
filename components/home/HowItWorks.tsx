@@ -96,6 +96,17 @@ function StepCard({ step, index }: { step: typeof STEPS[0]; index: number }) {
 
       <h3 className="text-base font-extrabold text-gray-900 mb-2">{step.title}</h3>
       <p className="text-gray-500 text-sm leading-relaxed max-w-[180px]">{step.description}</p>
+      {step.number === '01' && (
+        <a
+          href="https://wa.me/919644594899?text=Hi%2C%20I%20want%20to%20book%20a%20pest%20control%20service"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-3 inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-white text-xs font-bold shadow-md hover:scale-105 transition-transform duration-200"
+          style={{ background: 'linear-gradient(135deg, #1A6B35 0%, #84CC4A 100%)' }}
+        >
+          💬 Book Now
+        </a>
+      )}
     </div>
   );
 }

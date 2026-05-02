@@ -73,10 +73,9 @@ export default function ContactPage() {
                   <div>
                     <p className="text-xs text-gray-500 uppercase tracking-wide mb-0.5">Address</p>
                     <p className="text-gray-800 font-medium leading-relaxed">
-                      Shop No. 01, First Floor 7-B, NH-12,<br />
-                      Near Union Bank of India,<br />
-                      Indra Nagar, Mandideep,<br />
-                      Bhopal (Madhya Pradesh) 462046
+                      B-4 Commercial Complex, Vidhya Nagar,<br />
+                      Nearby Hotel La Pearl,<br />
+                      Bhopal 462026
                     </p>
                   </div>
                 </li>

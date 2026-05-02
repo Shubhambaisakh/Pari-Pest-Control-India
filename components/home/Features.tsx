@@ -1,8 +1,6 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { features } from '@/lib/data';
-import FeatureCard from '@/components/shared/FeatureCard';
 
 const STATS = [
   { end: 10,    label: 'Years Experience',       suffix: '+',  isK: false },
@@ -52,7 +50,13 @@ export default function Features() {
   }, []);
 
   return (
-    <section className="py-20 px-4" style={{ background: '#f9ffe0' }}>
+    <section className="py-20 px-4 bg-white relative">
+      {/* Wave separator at top */}
+      <div className="absolute top-0 left-0 w-full overflow-hidden leading-none" style={{ height: '48px' }}>
+        <svg viewBox="0 0 1440 48" preserveAspectRatio="none" className="w-full h-full" style={{ display: 'block' }}>
+          <path d="M0,48 C360,0 1080,0 1440,48 L1440,0 L0,0 Z" fill="#f5ffe0" />
+        </svg>
+      </div>
       <div className="max-w-7xl mx-auto">
 
         {/* Header */}
@@ -63,9 +67,9 @@ export default function Features() {
           >
             Why We Are Best?
           </span>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-3">Our Services</h2>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-3">Our Results</h2>
           <p className="text-gray-500 max-w-2xl mx-auto text-sm">
-            Expert team with multinational experience — taking special care of price, quality, and time.
+            Numbers that speak for themselves.
           </p>
         </div>
 
@@ -87,19 +91,6 @@ export default function Features() {
               </p>
               <p className="text-gray-800 text-sm font-semibold mt-2">{stat.label}</p>
             </div>
-          ))}
-        </div>
-
-        {/* Feature cards */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">
-          {features.map((feature, i) => (
-            <FeatureCard
-              key={feature.id}
-              icon={feature.icon}
-              title={feature.title}
-              description={feature.description}
-              index={i}
-            />
           ))}
         </div>
 

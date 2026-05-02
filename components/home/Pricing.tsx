@@ -145,8 +145,10 @@ function PricingCard({ plan, index, visible }: { plan: typeof PLANS[0]; index: n
         </ul>
 
         {/* Book Now button */}
-        <Link
-          href="/contact"
+        <a
+          href="https://wa.me/919644594899?text=Hi%2C%20I%20want%20to%20book%20a%20pest%20control%20service"
+          target="_blank"
+          rel="noopener noreferrer"
           className="group relative overflow-hidden block text-center py-4 rounded-2xl font-bold text-base"
           style={{ background: '#84CC4A', color: '#1A6B35' }}
         >
@@ -157,7 +159,7 @@ function PricingCard({ plan, index, visible }: { plan: typeof PLANS[0]; index: n
             className="absolute inset-0 translate-y-full group-hover:translate-y-0 transition-transform duration-300 rounded-2xl"
             style={{ background: '#1A6B35' }}
           />
-        </Link>
+        </a>
       </div>
     </div>
   );

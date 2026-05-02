@@ -12,7 +12,7 @@ const SERVICE_CARDS = [
     short: 'Comprehensive treatment using least-toxic chemicals by trained technicians.',
     img: '/1st.png',
     accent: '#f97316',
-    badge: '🏠 Most Booked',
+    badge: null,
   },
   {
     id: 'cockroach',
@@ -44,7 +44,7 @@ const SERVICE_CARDS = [
     short: 'Pre- and post-construction anti-termite treatments.',
     img: '/5th.png',
     accent: '#d97706',
-    badge: null,
+    badge: '🏠 Most Booked',
   },
   {
     id: 'bedbug',
@@ -76,6 +76,14 @@ const SERVICE_CARDS = [
     short: 'Safe relocation and hive removal by trained professionals.',
     img: '/9th.png',
     accent: '#f59e0b',
+    badge: null,
+  },
+  {
+    id: 'flies',
+    name: 'Flies Control',
+    short: 'Eliminate flies and prevent disease-spreading infestations at source.',
+    img: '/image 10th.png',
+    accent: '#16a34a',
     badge: null,
   },
 ];
@@ -137,13 +145,15 @@ function ServiceCard({ card, index }: { card: typeof SERVICE_CARDS[0]; index: nu
           className="mt-3 overflow-hidden transition-all duration-300"
           style={{ maxHeight: hovered ? '40px' : '0px', opacity: hovered ? 1 : 0 }}
         >
-          <Link
-            href="/contact"
+          <a
+            href={`https://wa.me/919644594899?text=Hi%2C%20I%20want%20to%20book%20${encodeURIComponent(card.name)}`}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 text-xs font-bold px-4 py-1.5 rounded-full text-white transition-all duration-200"
             style={{ background: card.accent }}
           >
             Get Free Quote →
-          </Link>
+          </a>
         </div>
       </div>
 

@@ -8,6 +8,8 @@ const CERTS = [
   { key: 'ipca',     src: '/ica.png',           alt: 'IPCA — Indian Pest Control Association' },
   { key: 'msme',     src: '/msme.png',          alt: 'MSME Registered' },
   { key: 'tm',       src: '/trade marks.jpg',   alt: 'Registered Trademark' },
+  { key: 'fssai',    src: '/png-clipart-food-safety-and-standards-authority-of-india-logo-india-food-text.png', alt: 'FSSAI — Food Safety and Standards Authority of India' },
+  { key: 'new2',     src: '/images.png',        alt: 'Certified Partner' },
 ];
 
 // Triple for seamless infinite loop

@@ -12,11 +12,10 @@ export default function Footer() {
             <div className="flex items-center gap-3 mb-3">
               <Image src="/Logo_PPCI-removebg-preview.png" alt="PPCI Logo" width={52} height={52} className="rounded-full object-contain" />
               <div>
-                <h2 className="text-base font-bold leading-tight">Pari Pest Control India</h2>
-                <p className="text-xs font-semibold" style={{ color: '#84CC4A' }}>PPCI PVT. LTD.</p>
+                <h2 className="text-base font-bold leading-tight">Pari Pest Control India Pvt. Ltd.</h2>
               </div>
             </div>
-            <p className="text-sm text-gray-400 leading-relaxed">
+            <p className="text-sm text-white/80 leading-relaxed">
               Making Indian homes and businesses Pest-Free! Best Pest Control in Bhopal.
             </p>
           </div>
@@ -24,7 +23,7 @@ export default function Footer() {
           {/* Quick Links */}
           <div>
             <h3 className="text-base font-bold mb-4" style={{ color: '#84CC4A' }}>Quick Links</h3>
-            <ul className="space-y-2 text-sm text-gray-400">
+            <ul className="space-y-2 text-sm text-white/80">
               <li><Link href="/" className="hover:text-white transition-colors">Home</Link></li>
               <li><Link href="/services" className="hover:text-white transition-colors">Services</Link></li>
               <li><Link href="/about" className="hover:text-white transition-colors">About Us</Link></li>
@@ -35,12 +34,12 @@ export default function Footer() {
           {/* Contact */}
           <div>
             <h3 className="text-base font-bold mb-4" style={{ color: '#84CC4A' }}>Contact Us</h3>
-            <ul className="space-y-3 text-sm text-gray-400">
+            <ul className="space-y-3 text-sm text-white/80">
               <li className="flex items-start gap-2">
                 <span>📞</span>
                 <div>
                   <a href="tel:18003094947" className="hover:text-white transition-colors font-medium text-white">1800-309-4947</a>
-                  <p className="text-xs text-gray-500">Toll Free</p>
+                  <p className="text-xs text-white/60">Toll Free</p>
                 </div>
               </li>
               <li className="flex items-start gap-2">
@@ -52,10 +51,9 @@ export default function Footer() {
               <li className="flex items-start gap-2">
                 <span>📍</span>
                 <span className="text-xs leading-relaxed">
-                  Shop No. 01, First Floor 7-B, NH-12,<br />
-                  Near Union Bank of India,<br />
-                  Indra Nagar, Mandideep,<br />
-                  Bhopal (M.P.) 462046
+                  B-4 Commercial Complex, Vidhya Nagar,<br />
+                  Nearby Hotel La Pearl,<br />
+                  Bhopal 462026
                 </span>
               </li>
             </ul>
@@ -71,7 +69,7 @@ export default function Footer() {
                 href="https://www.instagram.com/ppci.in/?hl=en"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 text-sm text-gray-400 hover:text-white transition-colors group"
+                className="flex items-center gap-3 text-sm text-white/80 hover:text-white transition-colors group"
               >
                 <span className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform"
                   style={{ background: 'linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888)' }}>
@@ -87,7 +85,7 @@ export default function Footer() {
                 href="https://www.facebook.com/profile.php?id=61584042194599"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 text-sm text-gray-400 hover:text-white transition-colors group"
+                className="flex items-center gap-3 text-sm text-white/80 hover:text-white transition-colors group"
               >
                 <span className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform"
                   style={{ background: '#1877F2' }}>
@@ -103,7 +101,7 @@ export default function Footer() {
                 href="https://youtube.com/shorts/ogaxrHrQVr4?si=XzZd5KvOn4_ecnKh"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 text-sm text-gray-400 hover:text-white transition-colors group"
+                className="flex items-center gap-3 text-sm text-white/80 hover:text-white transition-colors group"
               >
                 <span className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform"
                   style={{ background: '#FF0000' }}>
@@ -128,7 +126,7 @@ export default function Footer() {
       </div>
 
       <div style={{ borderTop: '1px solid #0d4a1f' }}>
-        <p className="text-center text-xs py-3 text-gray-500">
+        <p className="text-center text-xs py-3 text-white/60">
           © {new Date().getFullYear()} Pari Pest Control India Private Limited. All rights reserved.
         </p>
         <p className="text-center text-xs pb-3" style={{ color: '#84CC4A' }}>
@@ -138,4 +136,5 @@ export default function Footer() {
     </footer>
   );
 }
+
 

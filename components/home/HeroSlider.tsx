@@ -8,15 +8,15 @@ import Link from 'next/link';
 const SLIDES = [
   {
     photo: '/frontpage1.jpeg',
-    heading: { line1: 'One Package To', line2: 'Keep Your', line3: 'Home', line4: 'Pest-Free!' },
+    heading: { line1: 'One Package To', line2: 'Keep Your', line3: 'Home Pest-Free!', line4: '' },
   },
   {
     photo: '/frontpage2.jpeg',
-    heading: { line1: 'Complete Pest-Free', line2: 'Environment', line3: 'Guaranteed', line4: 'Today!' },
+    heading: { line1: 'Complete Pest-Free', line2: 'Environment', line3: 'Guaranteed Today!', line4: '' },
   },
   {
     photo: '/frontpage3.jpg',
-    heading: { line1: "Bhopal's Most", line2: 'Trusted Pest', line3: 'Control', line4: 'Company!' },
+    heading: { line1: "Bhopal's Most", line2: 'Trusted Pest', line3: 'Control Company!', line4: '' },
   },
 ];
 
@@ -75,9 +75,9 @@ export default function HeroSlider() {
             <PopText text={slide.heading.line1} color={PRIMARY} />
             <br />
             <PopText text={slide.heading.line2 + ' '} color={PRIMARY} />
-            <PopText text={slide.heading.line3} color={ACCENT} />
             <br />
-            <PopText text={slide.heading.line4} color={ACCENT} />
+            <PopText text={slide.heading.line3} color={ACCENT} />
+            {slide.heading.line4 && <><br /><PopText text={slide.heading.line4} color={ACCENT} /></>}
           </h1>
 
           {/* Subtext */}
@@ -87,7 +87,7 @@ export default function HeroSlider() {
 
           {/* Checkmarks */}
           <div className="flex flex-col gap-2 mb-6">
-            {['Free evaluation by skilled experts', 'Employing eco-friendly gels and sprays'].map(p => (
+            {['Free evaluation by skilled experts', 'Employing eco-friendly pest control services'].map(p => (
               <div key={p} className="flex items-center gap-2">
                 <span className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: ACCENT }}>
                   <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
@@ -101,8 +101,10 @@ export default function HeroSlider() {
 
           {/* Buttons — full width on mobile */}
           <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
-            <Link
-              href="/contact"
+            <a
+              href="https://wa.me/919644594899?text=Hi%2C%20I%20want%20to%20book%20a%20pest%20control%20service"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-center px-6 py-3 rounded-xl font-bold text-white text-sm shadow-lg w-full sm:w-auto"
               style={{
                 background: 'linear-gradient(135deg, #1A6B35 0%, #84CC4A 100%)',
@@ -110,7 +112,7 @@ export default function HeroSlider() {
               }}
             >
               Book Now
-            </Link>
+            </a>
             <a
               href="tel:18003094947"
               className="text-center px-5 py-3 rounded-lg font-bold text-sm border-2 flex items-center justify-center gap-2 w-full sm:w-auto"
